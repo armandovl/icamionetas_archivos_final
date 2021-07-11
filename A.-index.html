@@ -44,7 +44,12 @@
   </ul>
   <div class="container">
   <center><h4><strong>Generación de Documentos</strong></h4></center>
-  <p>aqui van las instrucciones dedjeh hjkde ghdegwjkdf ghfcjjkdwhfjkelw ghedjkfekjhwgd edghjkew deww</p>
+  <p style=”text-align: justify;”>Por favor escribe el número de serie (hay una función de autocompletado para mayor comodidad), una vez escrito, notarás que algunos campos se rellenan automaticamente de los datos enviados con aterioridad. Lo siguiente es rellenar los campos faltantes al igual que subir los archivos solicitados (sólo formato pdf). 
+<br>
+Una vez llenados todos los campos da click en el botón amarillo, este validará que los campos estén correctos y habilitará el botón verde de "Enviar Registro", pulsa el boton verde para enviar los resgistros y el boton rojo para limpiar y enviar un nuevo registro.
+<br>
+Si tienes duda puedes ver el video tutorial </p>
+  <button data-target="modal1" class="btn modal-trigger">Video Tutorial</button>
   </div>
     
   	<!-- para poner tarjeta-->
@@ -56,7 +61,7 @@
                       <!--- aqui va los input-->
                       <div class="input-field col s12 m6 l4">
                       <i class="material-icons prefix">keyboard_hide</i>
-                      <input type="text" id="serie" name="serie" class="claseAutocompletado" required="true" onchange="sacandoNumeroSerie()">
+                      <input type="text" id="serie" name="serie" value="" class="claseAutocompletado" required="true" onchange="sacandoNumeroSerie()">
                       <label for="serie">Número de Serie</label>
                       </div>
 
@@ -64,7 +69,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix">location_on</i>
                         <!--este es para un icono-->
-                        <input id="territorio" placeholder="territorio" type="text" name="territorio" class="validate" required="true" aria-required="true" disabled>
+                        <input id="territorio" value="" placeholder="territorio" type="text" name="territorio" class="validate" required="true" aria-required="true" disabled>
                         <!--<label for="territorio">Territorio</label>-->
                       </div>
 
@@ -72,7 +77,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix">drive_eta</i>
                         <!--este es para un icono-->
-                        <input id="marca" type="text" name="marca" class="validate" required="true" aria-required="true" placeholder="Marca" disabled>
+                        <input id="marca" value="" type="text" name="marca" class="validate" required="true" aria-required="true" placeholder="Marca" disabled>
                         <!--<label for="marca">Marca</label>-->
                       </div>
 
@@ -80,7 +85,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix">drive_eta</i>
                         <!--este es para un icono-->
-                        <input id="submarca" type="text" name="submarca" class="validate" required="true" aria-required="true" placeholder="Submarca" disabled>
+                        <input id="submarca" value="" type="text" name="submarca" class="validate" required="true" aria-required="true" placeholder="Submarca" disabled>
                         <!--<label for="submarca">Submarca</label>-->
                       </div> 
 
@@ -88,7 +93,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix">dvr</i>
                         <!--este es para un icono-->
-                        <input id="placa" type="text" name="placa" class="validate" required="true" aria-required="true" placeholder="Placa" disabled>
+                        <input id="placa" type="text" value="" name="placa" class="validate" required="true" aria-required="true" placeholder="Placa" disabled>
                         <!--<label for="placa">Placa</label>-->
                       </div>
 
@@ -106,7 +111,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix"></i>
                         <!--este es para un icono-->
-                        <input id="poliza" type="number" name="poliza" class="validate" required="true" aria-required="true">
+                        <input id="poliza" type="number" name="poliza" class="validate" required="true" aria-required="true" value="">
                         <label for="poliza">Poliza de Seguro (12 dígitos)</label>
                       </div>
 
@@ -114,7 +119,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix"></i>
                         <!--este es para un icono-->
-                        <input type="text" class="datepicker" id="inicioPoliza" name="inicioPoliza" class="validate" required="true">
+                        <input type="text" class="datepicker" id="inicioPoliza" name="inicioPoliza" class="validate" required="true" value="">
                         <!--<input id="poliza" type="text" name="poliza" class="validate" required="true" aria-required="true">-->
                         <label for="inicioPoliza">Fecha Inicio de Poliza</label>
                       </div>
@@ -123,7 +128,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix"></i>
                         <!--este es para un icono-->
-                        <input type="text" class="datepicker" id="finPoliza" name="finPoliza" class="validate" required="true">
+                        <input type="text" class="datepicker" id="finPoliza" name="finPoliza" class="validate" required="true" value="" >
                         <!--<input id="poliza" type="text" name="poliza" class="validate" required="true" aria-required="true">-->
                         <label for="finPoliza">Fecha Fin de Poliza</label>
                       </div>
@@ -132,7 +137,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix"></i>
                         <!--este es para un icono-->
-                        <input id="licencia" type="number" name="licencia" class="validate" required="true" aria-required="true">
+                        <input id="licencia" type="number" name="licencia" class="validate" required="true" aria-required="true" value="">
                         <label for="licencia">Licencia de Conducir (12 dígitos)</label>
                       </div>
 
@@ -140,7 +145,7 @@
                         <!--este es para un icono-->
                         <i class="material-icons prefix"></i>
                         <!--este es para un icono-->
-                        <input type="text" class="datepicker" id="finLicencia" name="finLicencia" class="validate" required="true">
+                        <input type="text" class="datepicker" id="finLicencia" name="finLicencia" class="validate" required="true" value="">
                         <!--<input id="poliza" type="text" name="poliza" class="validate" required="true" aria-required="true">-->
                         <label for="finLicencia">Fecha vencimiento licencia</label>
                       </div>
@@ -153,7 +158,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Resguardo Vehículo</span>
-                            <input id="resguardoCarroArchivo" type="file" name="resguardoCarroArchivo" required="true" accept="application/pdf">
+                            <input id="resguardoCarroArchivo" value="" type="file" name="resguardoCarroArchivo" required="true" accept="application/pdf">
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Resguardo de Vehículo">
@@ -164,7 +169,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Póliza de Seguro</span>
-                            <input id="polizaArchivo" type="file" name="polizaArchivo" required="true" accept="application/pdf" >
+                            <input id="polizaArchivo" value="" type="file" name="polizaArchivo" required="true" accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Póliza de Seguro">
@@ -174,7 +179,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Tarjeta Circulación</span>
-                            <input id="tarjetaCirculacionArchivo" type="file" name="tarjetaCirculacionArchivo" required="true" accept="application/pdf">
+                            <input id="tarjetaCirculacionArchivo" value="" type="file" name="tarjetaCirculacionArchivo" required="true" accept="application/pdf">
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Tarjeta de Circulación" >
@@ -185,7 +190,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Resguardo Monedero</span>
-                            <input id="resguardoMonederoArchivo" type="file" name="resguardoMonederoArchivo" required="true" accept="application/pdf" >
+                            <input id="resguardoMonederoArchivo" value="" type="file" name="resguardoMonederoArchivo" required="true" accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Resguardo de Monedero"  >
@@ -195,7 +200,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Licencia de Conducir</span>
-                            <input id="licenciaArchivo" type="file" name="licenciaArchivo" required="true"  accept="application/pdf" >
+                            <input id="licenciaArchivo" value="" type="file" name="licenciaArchivo" required="true"  accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Licencia de Conducir">
@@ -206,7 +211,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Credencial de Elector</span>
-                            <input id="credencialElectorArchivo" type="file" name="credencialElectorArchivo" required="true" accept="application/pdf" >
+                            <input id="credencialElectorArchivo" value="" type="file" name="credencialElectorArchivo" required="true" accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Credencial de Elector">
@@ -217,7 +222,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Comprobante de Domicilio</span>
-                            <input id="comprobanteDomicilioArchivo" type="file" name="comprobanteDomicilioArchivo" required="true" accept="application/pdf" >
+                            <input id="comprobanteDomicilioArchivo" value="" type="file" name="comprobanteDomicilioArchivo" required="true" accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Comprobante de Domicilio">
@@ -228,6 +233,8 @@
                       <div class="input-field col s12 m6 l4">
                         <input id="escondido" placeholder="escondido" type="text" name="escondido" required="true" class="hide">
                       </div>
+
+
               </div> <!--tarjeta fin-->
               
               <!-- importante el boton va dentro del form, arriba /form y fuera de tarjeta
@@ -236,13 +243,20 @@
                --> 
 
 
-          <button  id="boton1" src="" value="Subir Archivos" class="btn sombreadoGrueso" 
-          onclick="enviarSheet();adjuntosEnviar(this.parentNode);" 
-          >Enviar Datos</button>
+
         <button  id="botonLimpiar" class="btn sombreadoGrueso red accent-4" 
           onclick="this.form.reset()" 
           >limpiar</button>
-          
+
+        <button  id="botonValidar" class="btn sombreadoGrueso lime" 
+          onclick="validar()" 
+          >validar</button>
+
+          <button  id="boton1" src="" value="Subir Archivos" class="btn sombreadoGrueso" 
+          onclick="enviarSheet();adjuntosEnviar(this.parentNode);" 
+          disabled >Enviar Registro</button>
+
+          <br> <br> <br> <br> <br>
 
           </form>
 
@@ -252,7 +266,23 @@
 
       </div>
     </div>
-  
+
+    <!-- ventana modal ----->
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Video Tutorial</h4>
+      <p>Para poder cerrar esta ventana, favor de poner pausa al video tutorial</p>
+      <iframe width="100%" height="250" src="https://www.youtube.com/embed/DDDxBVTbZRM?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="sombreadoGrueso"></iframe>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Entendido</a>
+    </div>
+  </div>
+   <!-- ventana modal ----->
+
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <?!= include("D.-java-script");?>

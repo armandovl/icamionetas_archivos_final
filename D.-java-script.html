@@ -72,12 +72,59 @@
 
     google.script.run.subiendoArchivos(parametroThis);
     alert("Se han enviado los archivos");
+    document.getElementById("boton1").disabled = true;
        
       
     };
 
 
+/************* validar datos**************************/
+function validar(){
+
+    var nombre1= document.getElementById("serie").value; //ya nada mas se descomponer
+    var nombre2= document.getElementById("territorio").value;
+    var nombre3= document.getElementById("marca").value;
+    var nombre4= document.getElementById("submarca").value; //ya nada mas se descomponer
+    var nombre5= document.getElementById("placa").value;
+    var nombre6= document.getElementById("contrato").value;
+    var nombre7= document.getElementById("poliza").value;
+    var nombre8= document.getElementById("inicioPoliza").value;
+    var nombre9= document.getElementById("finPoliza").value; //ya nada mas se descomponer
+    var nombre10= document.getElementById("licencia").value;
+    var nombre11= document.getElementById("finLicencia").value;
+
+    var nombre12= document.getElementById("resguardoCarroArchivo").value;
+    var nombre13= document.getElementById("polizaArchivo").value;
+    var nombre14= document.getElementById("tarjetaCirculacionArchivo").value;
+    var nombre15= document.getElementById("resguardoMonederoArchivo").value;
+    var nombre16= document.getElementById("licenciaArchivo").value;
+    var nombre17= document.getElementById("credencialElectorArchivo").value;
+    var nombre18= document.getElementById("comprobanteDomicilioArchivo").value;
+
+    if(nombre1 == "" || nombre2 == ""|| nombre3 == "" || nombre4 == ""|| nombre5 == ""|| nombre6 == "" || nombre7 == ""|| nombre8 == ""|| nombre9 == "" || nombre10 == ""|| nombre11 == ""){
+      
+      alert("que mierda");
+      alert("Todos los campos son obliogatorios");
+
+    }else if (nombre7.length < 12 || nombre7.length > 12){
+
+      alert("Por favor verifica la cantidad de dígitos en poliza");
+
+    }else if (nombre10.length < 12 || nombre10.length > 12){
+
+      alert("Por favor verifica la cantidad de dígitos en licencia");
     
+    }else if ( nombre12 == "" || nombre13 == "" || nombre14 == "" || nombre15 == "" || nombre16 == "" || nombre17 == ""|| nombre18 == ""){
+
+      alert("Todos los documentos son obligatorios");
+    }else{
+
+      alert("Botón Enviar ACTIVADO");
+      document.getElementById("boton1").disabled = false;
+    }
+  
+  
+}
 
    
 
