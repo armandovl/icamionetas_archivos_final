@@ -56,7 +56,7 @@
                       <!--- aqui va los input-->
                       <div class="input-field col s12 m6 l4">
                       <i class="material-icons prefix">keyboard_hide</i>
-                      <input type="text" id="serie" name="serie" class="claseAutocompletado" onchange="sacandoNumeroSerie()">
+                      <input type="text" id="serie" name="serie" class="claseAutocompletado" required="true" onchange="sacandoNumeroSerie()">
                       <label for="serie">Número de Serie</label>
                       </div>
 
@@ -94,7 +94,7 @@
 
                       <div class="input-field col s12 m5 l4">
                         <select id="contrato" name="contrato" required="true" aria-required="true">
-                          <option value="" disabled selected></option>
+                          <option value="" disabled selected >Contrato</option>
                           <option value="LUMO 096">LUMO 096</option>
                           <option value="LUMO 206">LUMO 206</option>
                           <option value="JETVAN">JETVAN</option>
@@ -153,7 +153,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Resguardo Vehículo</span>
-                            <input id="resguardoCarroArchivo" type="file" name="resguardoCarroArchivo" required="true">
+                            <input id="resguardoCarroArchivo" type="file" name="resguardoCarroArchivo" required="true" accept="application/pdf">
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Resguardo de Vehículo">
@@ -164,7 +164,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Póliza de Seguro</span>
-                            <input id="polizaArchivo" type="file" name="polizaArchivo" required="true">
+                            <input id="polizaArchivo" type="file" name="polizaArchivo" required="true" accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Póliza de Seguro">
@@ -174,10 +174,10 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Tarjeta Circulación</span>
-                            <input id="tarjetaCirculacionArchivo" type="file" name="tarjetaCirculacionArchivo" required="true">
+                            <input id="tarjetaCirculacionArchivo" type="file" name="tarjetaCirculacionArchivo" required="true" accept="application/pdf">
                           </div>
                           <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Tarjeta de Circulación">
+                            <input class="file-path validate" type="text" placeholder="Tarjeta de Circulación" >
                           </div>
                         </div>
 
@@ -185,17 +185,17 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Resguardo Monedero</span>
-                            <input id="resguardoMonederoArchivo" type="file" name="resguardoMonederoArchivo" required="true">
+                            <input id="resguardoMonederoArchivo" type="file" name="resguardoMonederoArchivo" required="true" accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Resguardo de Monedero">
+                            <input class="file-path validate" type="text" placeholder="Resguardo de Monedero"  >
                           </div>
                         </div>
                         <div class="file-field input-field col s12 m6 l6">
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Licencia de Conducir</span>
-                            <input id="licenciaArchivo" type="file" name="licenciaArchivo" required="true">
+                            <input id="licenciaArchivo" type="file" name="licenciaArchivo" required="true"  accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Licencia de Conducir">
@@ -206,7 +206,7 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Credencial de Elector</span>
-                            <input id="credencialElectorArchivo" type="file" name="credencialElectorArchivo" required="true">
+                            <input id="credencialElectorArchivo" type="file" name="credencialElectorArchivo" required="true" accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Credencial de Elector">
@@ -217,12 +217,17 @@
                           <div class="btn">
                             <i class="material-icons left">system_update_alt</i>
                             <span>Comprobante de Domicilio</span>
-                            <input id="comprobanteDomicilioArchivo" type="file" name="comprobanteDomicilioArchivo" required="true">
+                            <input id="comprobanteDomicilioArchivo" type="file" name="comprobanteDomicilioArchivo" required="true" accept="application/pdf" >
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text" placeholder="Comprobante de Domicilio">
                           </div>
                         </div>
+
+
+                      <div class="input-field col s12 m6 l4">
+                        <input id="escondido" placeholder="escondido" type="text" name="escondido" required="true" class="hide">
+                      </div>
               </div> <!--tarjeta fin-->
               
               <!-- importante el boton va dentro del form, arriba /form y fuera de tarjeta
@@ -230,14 +235,21 @@
                     onclick="enviarSheet">Enviar Registros</button> 
                --> 
 
-          <button type="submit" id="boton1" src="" value="Subir Archivos" class="btn sombreadoGrueso" 
-                    onclick="enviarSheet();google.script.run.subiendoArchivos(this.parentNode);return false;">Enviar Datos</button> 
+
+          <button  id="boton1" src="" value="Subir Archivos" class="btn sombreadoGrueso" 
+          onclick="enviarSheet();adjuntosEnviar(this.parentNode);" 
+          >Enviar Datos</button>
+        <button  id="botonLimpiar" class="btn sombreadoGrueso red accent-4" 
+          onclick="this.form.reset()" 
+          >limpiar</button>
+          
+
           </form>
-        <!--
-        <button type="submit" class="btn sombreadoGrueso" id="botonEnviar">Enviar</button>  importante el boton va fuera del form --> 
-        
-        <!--
-          <button class="btn sombreadoGrueso" id="botonProvisional">Traer Datos</button>  importante el boton va fuera del form --> 
+
+
+
+          
+
       </div>
     </div>
   

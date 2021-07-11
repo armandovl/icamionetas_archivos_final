@@ -1,11 +1,16 @@
  <script type="text/javascript">
-	/***********************************Enviando Registro ************************************/
+
+/***************************************GLOBAL*********************************************/
+
+/***********************************Enviando Registro ************************************/
     // al hacer click en el boton se ejecuta la funcion script enviar sheet
     //document.getElementById("botonEnviar").addEventListener("click",enviarSheet);
     
     function enviarSheet(){
-    alert("Se van a enviar tus datos");
+
     
+
+
     var compilado={}; //variable que compila la informacion de varias variables
     compilado.nombre1= document.getElementById("serie").value; //ya nada mas se descomponer
     compilado.nombre2= document.getElementById("territorio").value;
@@ -22,20 +27,13 @@
     //alert(compilado.nombre5);
 
     google.script.run.hacerClick(compilado);  // *esta linea ejecuta funciones del .gs el nombre1 pasa como argumento
+
+    alert("Sus datos se han enviado");
     
-    /*
-    compilado.nombre1= document.getElementById("serie").value=""; //limpiar inputs
-    compilado.nombre2= document.getElementById("territorio").value=""; //limpiar inputs
-    compilado.nombre3= document.getElementById("marca").value=""; //limpiar inputs
-    compilado.nombre4= document.getElementById("submarca").value=""; //ya nada mas se descomponer
-    compilado.nombre5= document.getElementById("placa").value="";
-    compilado.nombre6= document.getElementById("contrato").value="";
-    compilado.nombre7= document.getElementById("poliza").value=""; //limpiar inputs
-    compilado.nombre8= document.getElementById("inicioPoliza").value=""; //limpiar inputs
-    compilado.nombre9= document.getElementById("finPoliza").value=""; //ya nada mas se descomponer
-    compilado.nombre10= document.getElementById("licencia").value="";
-    compilado.nombre11= document.getElementById("finLicencia").value="";
-*/
+ 
+
+
+
     };
 
 /**************************************** Haciendo el match *************************************************/
@@ -67,9 +65,24 @@
     }
 
 
-    /**************************************enviandoDocumentos****/
-    
+    /**************************************Validar datos****/
+//enviarSheet();google.script.run.subiendoArchivos(this.parentNode);return false;
+
+    function adjuntosEnviar(parametroThis){
+
+    google.script.run.subiendoArchivos(parametroThis);
+    alert("Se han enviado los archivos");
+       
       
+    };
+
+
+    
+
+   
+
+
+ 
       
    </script>
 
