@@ -1,0 +1,81 @@
+ <script type="text/javascript">
+	/***********************************Enviando Registro ************************************/
+    // al hacer click en el boton se ejecuta la funcion script enviar sheet
+    //document.getElementById("botonEnviar").addEventListener("click",enviarSheet);
+    
+    function enviarSheet(){
+    alert("Se van a enviar tus datos");
+    
+    var compilado={}; //variable que compila la informacion de varias variables
+    compilado.nombre1= document.getElementById("serie").value; //ya nada mas se descomponer
+    compilado.nombre2= document.getElementById("territorio").value;
+    compilado.nombre3= document.getElementById("marca").value;
+    compilado.nombre4= document.getElementById("submarca").value; //ya nada mas se descomponer
+    compilado.nombre5= document.getElementById("placa").value;
+    compilado.nombre6= document.getElementById("contrato").value;
+    compilado.nombre7= document.getElementById("poliza").value;
+    compilado.nombre8= document.getElementById("inicioPoliza").value;
+    compilado.nombre9= document.getElementById("finPoliza").value; //ya nada mas se descomponer
+    compilado.nombre10= document.getElementById("licencia").value;
+    compilado.nombre11= document.getElementById("finLicencia").value;
+
+    //alert(compilado.nombre5);
+
+    google.script.run.hacerClick(compilado);  // *esta linea ejecuta funciones del .gs el nombre1 pasa como argumento
+    
+    /*
+    compilado.nombre1= document.getElementById("serie").value=""; //limpiar inputs
+    compilado.nombre2= document.getElementById("territorio").value=""; //limpiar inputs
+    compilado.nombre3= document.getElementById("marca").value=""; //limpiar inputs
+    compilado.nombre4= document.getElementById("submarca").value=""; //ya nada mas se descomponer
+    compilado.nombre5= document.getElementById("placa").value="";
+    compilado.nombre6= document.getElementById("contrato").value="";
+    compilado.nombre7= document.getElementById("poliza").value=""; //limpiar inputs
+    compilado.nombre8= document.getElementById("inicioPoliza").value=""; //limpiar inputs
+    compilado.nombre9= document.getElementById("finPoliza").value=""; //ya nada mas se descomponer
+    compilado.nombre10= document.getElementById("licencia").value="";
+    compilado.nombre11= document.getElementById("finLicencia").value="";
+*/
+    };
+
+/**************************************** Haciendo el match *************************************************/
+      document.getElementById("botonProvisional").addEventListener("click",sacandoNumeroSerie);
+
+    //sacando el valor del select
+    function sacandoNumeroSerie(){
+      var valorNumeroSerie=document.getElementById("serie").value;
+      google.script.run
+      .withSuccessHandler(cambiarInput) //funcion si si funciona y recibe parametro inmediato
+      .buscarPorParametro(valorNumeroSerie);
+    }
+
+    function cambiarInput(parametroDesdeGAS){
+      var inputTerritorio = document.getElementById("territorio");
+      inputTerritorio.value=parametroDesdeGAS[0];
+
+      var inputTerritorio = document.getElementById("territorio2");
+      inputTerritorio.value=parametroDesdeGAS[0];
+
+      var inputMarca = document.getElementById("marca");
+      inputMarca.value=parametroDesdeGAS[1];
+
+      var inputSubmarca = document.getElementById("submarca");
+      inputSubmarca.value=parametroDesdeGAS[2];
+
+      var inputPlaca = document.getElementById("placa");
+      inputPlaca.value=parametroDesdeGAS[3];
+    }
+
+
+    /**************************************enviandoDocumentos****/
+    
+      
+      
+   </script>
+
+
+
+
+
+
+
