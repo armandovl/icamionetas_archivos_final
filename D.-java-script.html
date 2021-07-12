@@ -8,31 +8,25 @@
     
     function enviarSheet(){
 
-    
-
-
     var compilado={}; //variable que compila la informacion de varias variables
-    compilado.nombre1= document.getElementById("serie").value; //ya nada mas se descomponer
+    compilado.nombre1= document.getElementById("serie").value;
     compilado.nombre2= document.getElementById("territorio").value;
     compilado.nombre3= document.getElementById("marca").value;
-    compilado.nombre4= document.getElementById("submarca").value; //ya nada mas se descomponer
+    compilado.nombre4= document.getElementById("submarca").value;
     compilado.nombre5= document.getElementById("placa").value;
     compilado.nombre6= document.getElementById("contrato").value;
     compilado.nombre7= document.getElementById("poliza").value;
     compilado.nombre8= document.getElementById("inicioPoliza").value;
-    compilado.nombre9= document.getElementById("finPoliza").value; //ya nada mas se descomponer
+    compilado.nombre9= document.getElementById("finPoliza").value; 
     compilado.nombre10= document.getElementById("licencia").value;
     compilado.nombre11= document.getElementById("finLicencia").value;
+    /***************************** cambio********************************************/
+    compilado.nombreR= document.getElementById("resguardante").value; 
 
     //alert(compilado.nombre5);
 
     google.script.run.hacerClick(compilado);  // *esta linea ejecuta funciones del .gs el nombre1 pasa como argumento
-
-    alert("Sus datos se han enviado");
-    
- 
-
-
+    alert("Se han enviado los registros");
 
     };
 
@@ -62,6 +56,9 @@
 
       var inputPlaca = document.getElementById("placa");
       inputPlaca.value=parametroDesdeGAS[3];
+
+      var inputResguardante = document.getElementById("resguardante"); /***********cambiar **********/
+      inputResguardante.value=parametroDesdeGAS[4];
     }
 
 
@@ -101,18 +98,20 @@ function validar(){
     var nombre17= document.getElementById("credencialElectorArchivo").value;
     var nombre18= document.getElementById("comprobanteDomicilioArchivo").value;
 
+
+
     if(nombre1 == "" || nombre2 == ""|| nombre3 == "" || nombre4 == ""|| nombre5 == ""|| nombre6 == "" || nombre7 == ""|| nombre8 == ""|| nombre9 == "" || nombre10 == ""|| nombre11 == ""){
       
-      alert("que mierda");
-      alert("Todos los campos son obliogatorios");
+      //alert("que mierda");
+      alert("Todos los campos son obligatorios");
 
-    }else if (nombre7.length < 12 || nombre7.length > 12){
+    }else if (nombre7.length < 14 || nombre7.length > 16){
 
-      alert("Por favor verifica la cantidad de dígitos en poliza");
+      alert("Por favor verifica el formato en poliza, el formato es el siguiente: \n Número de poliza (10-12 dígitos) - Inciso (3 dígitos)\n Ejemplo: 0123456789-123");
 
-    }else if (nombre10.length < 12 || nombre10.length > 12){
+    }else if (nombre10.length < 14 || nombre10.length > 14){
 
-      alert("Por favor verifica la cantidad de dígitos en licencia");
+      alert("Por favor verifica el formato en licencia, el formato es el siguiente: \n Tipo de licencia (A,B,C..) - Número de licencia (12 dígitos)\n Ejemplo: A-012345678912");
     
     }else if ( nombre12 == "" || nombre13 == "" || nombre14 == "" || nombre15 == "" || nombre16 == "" || nombre17 == ""|| nombre18 == ""){
 

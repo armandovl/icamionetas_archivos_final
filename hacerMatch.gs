@@ -15,8 +15,9 @@ function buscarPorParametro(parametroSerie){
       var marcaEnviar=values[i][3];  //imprime la escolaridad
       var submarcaEnviar=values[i][4]; //imprime la ciudad
       var placaEnviar=values[i][8]; //imprime la ciudad
+      var resguardanteEnviar=values[i][11]; /************cambio */
     }
   }
 
-  return [territorioEnviar,marcaEnviar,submarcaEnviar,placaEnviar] ;
+  return [territorioEnviar,marcaEnviar,submarcaEnviar,placaEnviar,resguardanteEnviar] ;
 }

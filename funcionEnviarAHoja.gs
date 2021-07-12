@@ -9,7 +9,7 @@ function hacerClick(paramCom){
 
   paramCom.nombre1,paramCom.nombre2,paramCom.nombre3,paramCom.nombre4,
   paramCom.nombre5,paramCom.nombre6,paramCom.nombre7,paramCom.nombre8,
-  paramCom.nombre9,paramCom.nombre10,paramCom.nombre11
+  paramCom.nombre9,paramCom.nombre10,paramCom.nombre11,paramCom.nombreR /********* cambio  */
 
   ]); //aniade una columna /*importante ver como se llaman
 }

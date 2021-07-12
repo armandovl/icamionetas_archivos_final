@@ -43,7 +43,7 @@
     <li><a href="#"><i class="material-icons left">Gráficos</i>Mobile</a></li>
   </ul>
   <div class="container">
-  <center><h4><strong>Generación de Documentos</strong></h4></center>
+  <center><h4><strong>Generación de Expedientes</strong></h4></center>
   <p style=”text-align: justify;”>Por favor escribe el número de serie (hay una función de autocompletado para mayor comodidad), una vez escrito, notarás que algunos campos se rellenan automaticamente de los datos enviados con aterioridad. Lo siguiente es rellenar los campos faltantes al igual que subir los archivos solicitados (sólo formato pdf). 
 <br>
 Una vez llenados todos los campos da click en el botón amarillo, este validará que los campos estén correctos y habilitará el botón verde de "Enviar Registro", pulsa el boton verde para enviar los resgistros y el boton rojo para limpiar y enviar un nuevo registro.
@@ -97,22 +97,20 @@ Si tienes duda puedes ver el video tutorial </p>
                         <!--<label for="placa">Placa</label>-->
                       </div>
 
-                      <div class="input-field col s12 m5 l4">
-                        <select id="contrato" name="contrato" required="true" aria-required="true">
-                          <option value="" disabled selected >Contrato</option>
-                          <option value="LUMO 096">LUMO 096</option>
-                          <option value="LUMO 206">LUMO 206</option>
-                          <option value="JETVAN">JETVAN</option>
-                        </select>
-                        <label>Selecciona Proveedor del Contrato</label>
+                      <div class="input-field col s12 m6 l4">
+                        <!--este es para un icono-->
+                        <i class="material-icons prefix">person_pin</i>
+                        <!--este es para un icono-->
+                        <input id="resguardante" type="text" value="" name="resguardante" placeholder="Resguardante" disabled>
+                        <!--<label for="placa">resguardante</label>-->
                       </div>
 
                       <div class="input-field col s12 m6 l4">
                         <!--este es para un icono-->
                         <i class="material-icons prefix"></i>
                         <!--este es para un icono-->
-                        <input id="poliza" type="number" name="poliza" class="validate" required="true" aria-required="true" value="">
-                        <label for="poliza">Poliza de Seguro (12 dígitos)</label>
+                        <input id="poliza" title="Número de Poliza (10-12 dígitos) - Inciso ( 3 dígitos)" type="text" placeholder="0123456789-123" name="poliza" class="validate" required="true" aria-required="true" value="">
+                        <label for="poliza">Poliza de Seguro</label>
                       </div>
 
                       <div class="input-field col s12 m6 l4">
@@ -137,8 +135,8 @@ Si tienes duda puedes ver el video tutorial </p>
                         <!--este es para un icono-->
                         <i class="material-icons prefix"></i>
                         <!--este es para un icono-->
-                        <input id="licencia" type="number" name="licencia" class="validate" required="true" aria-required="true" value="">
-                        <label for="licencia">Licencia de Conducir (12 dígitos)</label>
+                        <input id="licencia" title="Tipo de Licencia (A,B,C) - Número de licencia (12 dígitos)" type="text" name="licencia" class="validate" placeholder="A-040000942647" required="true" aria-required="true" value="">
+                        <label for="licencia">Licencia: Tipo- Número</label>
                       </div>
 
                       <div class="input-field col s12 m6 l4">
@@ -147,10 +145,20 @@ Si tienes duda puedes ver el video tutorial </p>
                         <!--este es para un icono-->
                         <input type="text" class="datepicker" id="finLicencia" name="finLicencia" class="validate" required="true" value="">
                         <!--<input id="poliza" type="text" name="poliza" class="validate" required="true" aria-required="true">-->
-                        <label for="finLicencia">Fecha vencimiento licencia</label>
+                        <label for="finLicencia">Fecha Vencimiento Licencia</label>
                       </div>
 
                       <div class="input-field col s12 m6 l4">
+                        <select id="contrato" name="contrato" required="true" aria-required="true">
+                          <option value="" disabled selected >Contrato</option>
+                          <option value="LUMO 096">LUMO 096</option>
+                          <option value="LUMO 206">LUMO 206</option>
+                          <option value="JETVAN">JETVAN</option>
+                        </select>
+                        <label>Selecciona Proveedor del Contrato</label>
+                      </div> 
+
+                      <div class="input-field col s12 m12 l12">
                         <input id="territorio2" placeholder="territorio2" type="text" name="territorio2" class="hide">
                       </div>
 
@@ -230,6 +238,7 @@ Si tienes duda puedes ver el video tutorial </p>
                         </div>
 
 
+
                       <div class="input-field col s12 m6 l4">
                         <input id="escondido" placeholder="escondido" type="text" name="escondido" required="true" class="hide">
                       </div>
@@ -274,7 +283,7 @@ Si tienes duda puedes ver el video tutorial </p>
     <div class="modal-content">
       <h4>Video Tutorial</h4>
       <p>Para poder cerrar esta ventana, favor de poner pausa al video tutorial</p>
-      <iframe width="100%" height="250" src="https://www.youtube.com/embed/DDDxBVTbZRM?controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="sombreadoGrueso"></iframe>
+      <iframe width="100%" height="250" src="https://www.youtube.com/embed/YcIqEcBIz_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="sombreadoGrueso"></iframe>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Entendido</a>
